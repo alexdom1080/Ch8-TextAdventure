@@ -155,6 +155,10 @@ public class Game
             case GO:
                 goRoom(command);
                 break;
+                
+            case LOOK:
+                look();
+                break;
 
             case QUIT:
                 wantToQuit = quit(command);
@@ -219,5 +223,11 @@ public class Game
         else {
             return true;  // signal that we want to quit
         }
+    }
+    /**
+     * "look" was entered. Gets the desciption of the current room for the user.
+     */
+    private void look() {
+        System.out.println(currentRoom.getLongDescription());
     }
 }
