@@ -163,11 +163,21 @@ public class Game
             case QUIT:
                 wantToQuit = quit(command);
                 break;
+                
+            case CHARGE:
+                charge();
+                break;
         }
         return wantToQuit;
     }
 
     // implementations of user commands:
+    /**
+     * Prints out the statement of the Juul consuming a battery pack to stay charged.
+     */
+    private void charge() {
+        System.out.println("You consume a battery pack to stay charged.");
+    }
 
     /**
      * Print out some help information.
