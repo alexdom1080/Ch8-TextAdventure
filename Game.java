@@ -1,8 +1,6 @@
 /**
- *  This class is the main class of the "World of Zuul" application. 
- *  "World of Zuul" is a very simple, text based adventure game.  Users 
- *  can walk around some scenery. That's all. It should really be extended 
- *  to make it more interesting!
+ *  This class is the main class of the "Juul Adventure" application. 
+ *  "Juul Adventure" is a very simple, text based adventure game.
  * 
  *  To play this game, create an instance of this class and call the "play"
  *  method.
@@ -11,8 +9,8 @@
  *  rooms, creates the parser and starts the game.  It also evaluates and
  *  executes the commands that the parser returns.
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2011.08.10
+ * @author  Alexis Dominguez
+ * @version 4/8/2018
  */
 
 public class Game 
@@ -34,28 +32,71 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room outside, mainHallway, englishClass, mathClass, historyClass, gym, pool1, pool2, pool3,
+             pool4, juulLounge,principalOffice, lab, secondHallway, frenchClass, spanishClass, art,
+             scienceClass;
       
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        outside = new Room("Outside the main entrance of the high school.");
+        mainHallway = new Room("Inside the main hallway of the school.");
+        englishClass = new Room("In the english classroom.");
+        mathClass = new Room("In the math classroom");
+        historyClass = new Room("In the history classroom.");
+        gym = new Room("Inside the school's gym.");
+        pool1 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!");
+        pool2 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!");
+        pool3 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!");
+        pool4 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!");
+        juulLounge = new Room("You are in the sanctuary! Congrats!");
+        principalOffice = new Room("You are in the Principal's Office!");
+        lab = new Room("You are in the computer lab of the school.");
+        secondHallway = new Room("You have reached the second hallway.");
+        frenchClass = new Room("Inside the french classroom.");
+        spanishClass = new Room("In the spanish classroom.");
+        art = new Room("In the art classroom.");
+        scienceClass = new Room("You are in the science classroom.");
+        
         
         // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        outside.setExit("north", mainHallway);
 
-        theater.setExit("west", outside);
-
-        pub.setExit("east", outside);
-
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
-
-        office.setExit("west", lab);
+        mainHallway.setExit("south", outside);
+        mainHallway.setExit("north", historyClass);
+        mainHallway.setExit("east", mathClass);
+        mainHallway.setExit("west", englishClass);
+        
+        historyClass.setExit("south", mainHallway);
+        historyClass.setExit("north", pool1);
+        historyClass.setExit("west", lab);
+        historyClass.setExit("east", juulLounge);
+        
+        mathClass.setExit("west", mainHallway);
+        mathClass.setExit("south", secondHallway);
+        
+        englishClass.setExit("east", mainHallway);
+        englishClass.setExit("south", art);
+        
+        lab.setExit("west", historyClass);
+        
+        art.setExit("north", englishClass);
+        art.setExit("east", secondHallway);
+        
+        secondHallway.setExit("north", mathClass);
+        secondHallway.setExit("west", art);
+        secondHallway.setExit("east", scienceClass);
+        
+        scienceClass.setExit("west", secondHallway);
+        scienceClass.setExit("north", gym);
+        scienceClass.setExit("south", pool3);
+ 
+        gym.setExit("north", principalOffice);
+        gym.setExit("east", pool4);
+        gym.setExit("south", scienceClass);
+        
+        principalOffice.setExit("west", pool2);
+        
+        
+        
 
         currentRoom = outside;  // start game outside
     }
