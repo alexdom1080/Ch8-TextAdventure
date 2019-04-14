@@ -1,8 +1,4 @@
- 
-
-
-
-/**
+ /**
  *  This class is the main class of the "Juul Adventure" application. 
  *  "Juul Adventure" is a very simple, text based adventure game.
  * 
@@ -17,39 +13,20 @@
  * @version 4/8/2018
  */
 
-import java.util.*;
-
 public class Game 
 {
     
     private Parser parser;
     private Room currentRoom;
-    private Scanner reader;
-    private Player player;
     private Room prevRoom;
     
     /**
-     * Create the game, initialise its internal map, the player, and the scanner.
+     * Create the game and initialise its internal map.
      */
     public Game() 
     {
-        
-        player = new Player();
-        reader = new Scanner(System.in);
-        parser = new Parser();
-    }
-    
-    /**
-     * This method gets information about the player
-     */
-    private void createPlayer() {
-        System.out.println("Enter player name: ");
-        String name = reader.nextLine();
-        player.setPlayerName(name);
         createRooms();
-        System.out.println("Enter max player weight: ");
-        int w = reader.nextInt();
-        player.setMaxWeight(w);
+        parser = new Parser();
     }
 
     /**
@@ -144,7 +121,7 @@ public class Game
         principalOffice.setExit("west", pool2);
         
         prevRoom = null;
-        player.setCurrentRoom(outside);  // start game outside
+        currentRoom = outside;  // start game outside
     }
 
     /**
@@ -152,8 +129,6 @@ public class Game
      */
     public void play() 
     {            
-        createPlayer();
-        
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and
@@ -182,7 +157,7 @@ public class Game
         System.out.println("Juul Adventure is a semi boring adventure game.");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
-        System.out.println(player.getPlayerDescription());
+        System.out.println(currentRoom.getLongDescription());
     }
 
     /**
@@ -265,14 +240,15 @@ public class Game
         String direction = command.getSecondWord();
 
         // Try to leave current room.
-        Room nextRoom = player.getPlayerExit(direction);
+        Room nextRoom = currentRoom.getExit(direction);
 
         if (nextRoom == null) {
             System.out.println("There is no door!");
         }
         else {
-            player.setPlayerNewRoom(nextRoom);
-            System.out.println(player.getPlayerDescription());
+            prevRoom = currentRoom;
+            currentRoom = nextRoom;
+            System.out.println(currentRoom.getLongDescription());
         }
     }
 
@@ -295,14 +271,15 @@ public class Game
      * "look" was entered. Gets the desciption of the current room for the user.
      */
     private void look() {
-        System.out.println(player.getPlayerDescription());
+        System.out.println(currentRoom.getLongDescription());
     }
     
     /**
      * "back" was entered. Allows the player to retrace their steps by one room.
      */
     private void backRoom(){
-        player.previousRoomMove();
+        currentRoom = prevRoom;
+        System.out.println(currentRoom.getLongDescription());
     }
 }
 

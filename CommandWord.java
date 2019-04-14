@@ -9,8 +9,12 @@ public enum CommandWord
 {
     // A value for each command word along with its
     // corresponding user interface string.
+<<<<<<< HEAD
     GO("go"), QUIT("quit"), HELP("help"), UNKNOWN("?"),LOOK("look"), CHARGE("charge"), BACK("back"),
     TAKE("take"), DROP("drop");
+=======
+    GO("go"), QUIT("quit"), HELP("help"), UNKNOWN("?"),LOOK("look"), CHARGE("charge"), BACK("back");
+>>>>>>> parent of 80c17c2... modified the game class
     
     // The command string.
     private String commandString;
