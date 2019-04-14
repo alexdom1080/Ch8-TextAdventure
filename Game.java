@@ -1,4 +1,4 @@
-/**
+ /**
  *  This class is the main class of the "Juul Adventure" application. 
  *  "Juul Adventure" is a very simple, text based adventure game.
  * 
@@ -32,29 +32,52 @@ public class Game
      */
     private void createRooms()
     {
+        //Variables for each room
         Room outside, mainHallway, englishClass, mathClass, historyClass, gym, pool1, pool2, pool3,
-             pool4, juulLounge,principalOffice, lab, secondHallway, frenchClass, spanishClass, art,
-             scienceClass;
-      
-        // create the rooms
-        outside = new Room("Outside the main entrance of the high school.");
-        mainHallway = new Room("Inside the main hallway of the school.");
-        englishClass = new Room("In the english classroom.");
-        mathClass = new Room("In the math classroom");
-        historyClass = new Room("In the history classroom.");
-        gym = new Room("Inside the school's gym.");
-        pool1 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!");
-        pool2 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!");
-        pool3 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!");
-        pool4 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!");
-        juulLounge = new Room("You are in the sanctuary! Congrats!");
-        principalOffice = new Room("You are in the Principal's Office!");
-        lab = new Room("You are in the computer lab of the school.");
-        secondHallway = new Room("You have reached the second hallway.");
-        frenchClass = new Room("Inside the french classroom.");
-        spanishClass = new Room("In the spanish classroom.");
-        art = new Room("In the art classroom.");
-        scienceClass = new Room("You are in the science classroom.");
+             pool4, juulLounge,principalOffice, lab, secondHallway, art, scienceClass;
+        
+        //Item variables
+        Item lab_Item, principalOffice_Item, outside_Item, mainHallway_Item, englishClass_Item,
+             mathClass_Item, historyClass_Item, gym_Item, pool1_Item, pool2_Item, pool3_Item,
+             pool4_Item, juulLounge_Item, secondHallway_Item, art_Item, scienceClass_Item;
+             
+             
+             lab_Item = new Item("Computer: Used to surf the web.", 0);
+             principalOffice_Item = new Item("Mango Pod: Used to gain access to the JuulLounge!", 1);
+             outside_Item = new Item("Bench: Avaliable to be sat on for a bit", 0);
+             mainHallway_Item = new Item("Flyer: Advertising to the join the school's Juul Club...", 0);
+             secondHallway_Item = new Item("Flyer: Advertising to the join the school's Japanese "+ 
+                                           "Cartoon Club...", 0);
+             englishClass_Item = new Item("Book: Hamlet", 5);
+             mathClass_Item = new Item("Textbook: Calculus", 100);
+             historyClass_Item = new Item("Textbook: American History", 100);
+             scienceClass_Item = new Item("Book: Physics", 100);
+             gym_Item = new Item("Weight Rack: There is only a singular weight on it ,,,", 50);
+             pool1_Item = new Item("Fitler: This looks dirty...", 1);
+             pool2_Item = new Item("Fitler: This looks dirty...", 1);
+             pool3_Item = new Item("Fitler: This looks dirty...", 1);
+             pool4_Item = new Item("Fitler: This looks dirty...", 1);
+             art_Item = new Item("Paint: The only color left here is green...", 0);
+             juulLounge_Item = new Item("The only item in here is a toliet ,,,", 0);
+    
+  
+      // create the rooms
+        outside = new Room("Outside the main entrance of the high school.", outside_Item);
+        mainHallway = new Room("Inside the main hallway of the school.", mainHallway_Item);
+        englishClass = new Room("In the english classroom.", englishClass_Item);
+        mathClass = new Room("In the math classroom", mathClass_Item);
+        historyClass = new Room("In the history classroom.", historyClass_Item);
+        gym = new Room("Inside the school's gym.", gym_Item);
+        pool1 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!", pool1_Item);
+        pool2 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!", pool2_Item);
+        pool3 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!", pool3_Item);
+        pool4 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!", pool4_Item);
+        juulLounge = new Room("You are in the sanctuary! Congrats!", juulLounge_Item);
+        principalOffice = new Room("You are in the Principal's Office!", principalOffice_Item);
+        lab = new Room("You are in the computer lab of the school.", lab_Item);
+        secondHallway = new Room("You have reached the second hallway.", secondHallway_Item);
+        art = new Room("In the art classroom.", art_Item);
+        scienceClass = new Room("You are in the science classroom.", scienceClass_Item);
         
         
         // initialise room exits
@@ -125,8 +148,8 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println("Welcome to the Juul Adventure!");
+        System.out.println("Juul Adventure is a semi boring adventure game.");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -187,7 +210,7 @@ public class Game
     private void printHelp() 
     {
         System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("around at the high school.");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
