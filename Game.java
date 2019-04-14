@@ -89,10 +89,10 @@ public class Game
         mathClass = new Room("In the math classroom", mathClass_Item);
         historyClass = new Room("In the history classroom.", historyClass_Item);
         gym = new Room("Inside the school's gym.", gym_Item);
-        pool1 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!", pool1_Item);
-        pool2 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!", pool2_Item);
-        pool3 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!", pool3_Item);
-        pool4 = new Room("Uh-Oh! This area is wet, and it looks like you have died! Good-bye!", pool4_Item);
+        pool1 = new Room("Pool Room 1, this area is wet.", pool1_Item);
+        pool2 = new Room("Pool Room 2, this area is wet.", pool2_Item);
+        pool3 = new Room("Pool Room 3, this area is wet.", pool3_Item);
+        pool4 = new Room("Pool Room 4, this area is wet.", pool4_Item);
         juulLounge = new Room("You are in the sanctuary! Congrats!", juulLounge_Item);
         principalOffice = new Room("You are in the Principal's Office!", principalOffice_Item);
         lab = new Room("You are in the computer lab of the school.", lab_Item);
