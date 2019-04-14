@@ -2,7 +2,7 @@
 comment0.target=Game
 comment1.params=
 comment1.target=Game()
-comment1.text=\n\ Create\ the\ game,\ initialise\ its\ internal\ map,\ the\ player,\ and\ the\ scanner.\n
+comment1.text=\n\ Create\ the\ game\ and\ initialise\ its\ internal\ map.\n
 comment10.params=command
 comment10.target=void\ goRoom(Command)
 comment10.text=\ \n\ Try\ to\ go\ in\ one\ direction.\ If\ there\ is\ an\ exit,\ enter\ the\ new\n\ room,\ otherwise\ print\ an\ error\ message.\n
@@ -17,7 +17,7 @@ comment13.target=void\ backRoom()
 comment13.text=\n\ "back"\ was\ entered.\ Allows\ the\ player\ to\ retrace\ their\ steps\ by\ one\ room.\n
 comment2.params=
 comment2.target=void\ createPlayer()
-comment2.text=\n\ This\ method\ gets\ information\ about\ the\ player\n
+comment2.text=\n\ Creates\ a\ player.\n
 comment3.params=
 comment3.target=void\ createRooms()
 comment3.text=\n\ Create\ all\ the\ rooms\ and\ link\ their\ exits\ together.\n
