@@ -67,23 +67,23 @@ public class Game
              pool4_Item, juulLounge_Item, secondHallway_Item, art_Item, scienceClass_Item;
              
              
-             lab_Item = new Item("Computer: Used to surf the web.", 0);
-             principalOffice_Item = new Item("Mango Pod: Used to gain access to the JuulLounge!", 1);
-             outside_Item = new Item("Bench: Avaliable to be sat on for a bit", 0);
-             mainHallway_Item = new Item("Flyer: Advertising to the join the school's Juul Club...", 0);
-             secondHallway_Item = new Item("Flyer: Advertising to the join the school's Japanese "+ 
-                                           "Cartoon Club...", 0);
-             englishClass_Item = new Item("Book: Hamlet", 5);
-             mathClass_Item = new Item("Textbook: Calculus", 100);
-             historyClass_Item = new Item("Textbook: American History", 100);
-             scienceClass_Item = new Item("Book: Physics", 100);
-             gym_Item = new Item("Weight Rack: There is only a singular weight on it ,,,", 50);
-             pool1_Item = new Item("Fitler: This looks dirty...", 1);
-             pool2_Item = new Item("Fitler: This looks dirty...", 1);
-             pool3_Item = new Item("Fitler: This looks dirty...", 1);
-             pool4_Item = new Item("Fitler: This looks dirty...", 1);
-             art_Item = new Item("Paint: The only color left here is green...", 0);
-             juulLounge_Item = new Item("The only item in here is a toliet ,,,", 0);
+             lab_Item = new Item("Used to surf the web.", 0, "Computer");
+             principalOffice_Item = new Item("Used to gain access to the JuulLounge!", 1, "Mango Pod");
+             outside_Item = new Item("Avaliable to be sat on for a bit", 0, "Bench");
+             mainHallway_Item = new Item("Advertising to the join the school's Juul Club...", 0, "Flyer");
+             secondHallway_Item = new Item("Advertising to the join the school's Japanese "+ 
+                                           "Cartoon Club...", 0, "Flyer");
+             englishClass_Item = new Item("Hamlet", 5, "Book");
+             mathClass_Item = new Item("Calculus", 100, "Textbook");
+             historyClass_Item = new Item("American History", 100, "Textbook");
+             scienceClass_Item = new Item("Physics", 100, "Textbook");
+             gym_Item = new Item("There is only a singular weight on it ,,,", 5000, "Weight Rack");
+             pool1_Item = new Item("This looks dirty...", 1, "Filter");
+             pool2_Item = new Item("This looks dirty...", 1, "Filter");
+             pool3_Item = new Item("This looks dirty...", 1, "Filter");
+             pool4_Item = new Item("This looks dirty...", 1, "Filter");
+             art_Item = new Item("The only color left here is green...", 10, "Paint Can");
+             juulLounge_Item = new Item("The only item in here is a toliet ,,,", 500, "Toliet");
     
   
       // create the rooms

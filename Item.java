@@ -10,6 +10,7 @@ public class Item
     // Variables that hold description and weight.
     private String itemDesc;
     private int itemWeight;
+    private String name;
 
     /**
      * Constructor for objects of class Item
@@ -19,27 +20,53 @@ public class Item
         // initialise instance variables
         itemDesc = "";
         itemWeight = 0;
+        name = "";
     }
     
     /**
      * Constructor for objects of the class that takes in parameters.
      */
-    public Item(String desc, int weight) {
+    public Item(String desc, int weight, String name) {
         itemDesc = desc;
         itemWeight = weight;
+        this.name = name;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Returns a desription of the item to the user
+     * @return itemString - string description of the item
      */
     public String getItemDesc()
     {
-        String itemString = "Item Description: ";
+        String itemString = "\tName: " + this.name;
+        itemString += "\n\tDescription: ";
         itemString += this.itemDesc + "\n";
-        itemString += "Item Weight: " + this.itemWeight;
+        itemString += "\tWeight: " + this.itemWeight + "\n";
         return itemString;
     }
+    
+    /**
+     * Returns item name
+     * @return name - the item's name
+     */
+    public String getItemName() {
+        return name;
+    }
+    
+    /**
+     * Returns the description of the item
+     * @return itemDesc - returns desc of item
+     */
+    public String getDescOfItem() {
+        return itemDesc;
+    }
+    
+    /**
+     * Returns the item weight
+     * @return itemWeight - returns item weight
+     */
+    public int getItemWeight() {
+        return itemWeight;
+    }
+    
 }
