@@ -1,6 +1,7 @@
 // Item.java
 /**
  * Item class holds the description of the item as well as the weight.
+ * This class also allows for the information about the item to be obtained and input
  *
  * @author Alexis Dominguez
  * @version 4/8/2019

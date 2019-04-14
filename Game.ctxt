@@ -26,6 +26,7 @@ comment4.target=void\ play()
 comment4.text=\n\ \ Main\ play\ routine.\ \ Loops\ until\ end\ of\ play.\n
 comment5.params=args
 comment5.target=void\ main(java.lang.String[])
+comment5.text=\n\ Allows\ for\ the\ game\ to\ be\ played\ outside\ of\ BlueJ\n
 comment6.params=
 comment6.target=void\ printWelcome()
 comment6.text=\n\ Print\ out\ the\ opening\ message\ for\ the\ player.\n

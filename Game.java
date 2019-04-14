@@ -163,6 +163,9 @@ public class Game
         System.out.println("Thank you for playing.  Good bye.");
     }
     
+    /**
+     * Allows for the game to be played outside of BlueJ
+     */
     public static void main(String[] args) {
         Game juul = new Game();
         juul.play();
