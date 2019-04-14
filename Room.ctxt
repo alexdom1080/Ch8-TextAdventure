@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Room
 comment0.text=\n\ Class\ Room\ -\ a\ room\ in\ an\ adventure\ game.\n\n\ This\ class\ is\ part\ of\ the\ "Juul\ Adventure"\ application.\ \n\ "Juul\ Adventure"\ is\ a\ very\ simple,\ text\ based\ adventure\ game.\ \ \n\n\ A\ "Room"\ represents\ one\ location\ in\ the\ scenery\ of\ the\ game.\ \ It\ is\ \n\ connected\ to\ other\ rooms\ via\ exits.\ \ For\ each\ existing\ exit,\ the\ room\ \n\ stores\ a\ reference\ to\ the\ neighboring\ room.\n\ \n\ @author\ \ Alexis\ Dominguez\n\ @version\ 4/8/2018\n
-comment1.params=description
-comment1.target=Room(java.lang.String)
+comment1.params=description\ item
+comment1.target=Room(java.lang.String,\ Item)
 comment1.text=\n\ Create\ a\ room\ described\ "description".\ Initially,\ it\ has\n\ no\ exits.\ "description"\ is\ something\ like\ "a\ kitchen"\ or\n\ "an\ open\ court\ yard".\n\ @param\ description\ The\ room's\ description.\n
 comment2.params=direction\ neighbor
 comment2.target=void\ setExit(java.lang.String,\ Room)

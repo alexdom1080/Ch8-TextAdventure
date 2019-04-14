@@ -15,9 +15,11 @@
 
 public class Game 
 {
+    
     private Parser parser;
     private Room currentRoom;
-        
+    private Room prevRoom;
+    
     /**
      * Create the game and initialise its internal map.
      */
@@ -118,9 +120,7 @@ public class Game
         
         principalOffice.setExit("west", pool2);
         
-        
-        
-
+        prevRoom = null;
         currentRoom = outside;  // start game outside
     }
 
@@ -140,6 +140,11 @@ public class Game
             finished = processCommand(command);
         }
         System.out.println("Thank you for playing.  Good bye.");
+    }
+    
+    public static void main(String[] args) {
+        Game juul = new Game();
+        juul.play();
     }
 
     /**
@@ -190,6 +195,10 @@ public class Game
             case CHARGE:
                 charge();
                 break;
+                
+            case BACK:
+                backRoom();
+                break;
         }
         return wantToQuit;
     }
@@ -237,6 +246,7 @@ public class Game
             System.out.println("There is no door!");
         }
         else {
+            prevRoom = currentRoom;
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }
@@ -263,4 +273,13 @@ public class Game
     private void look() {
         System.out.println(currentRoom.getLongDescription());
     }
+    
+    /**
+     * "back" was entered. Allows the player to retrace their steps by one room.
+     */
+    private void backRoom(){
+        currentRoom = prevRoom;
+        System.out.println(currentRoom.getLongDescription());
+    }
 }
+
