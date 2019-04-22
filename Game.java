@@ -55,12 +55,13 @@ public class Game
     {
         //Variables for each room
         Room outside, mainHallway, englishClass, mathClass, historyClass, gym, pool1, pool2, pool3,
-             pool4, juulLounge,principalOffice, lab, secondHallway, art, scienceClass;
+             pool4, juulLounge,principalOffice, lab, secondHallway, art, scienceClass, transporter;
         
         //Item variables
         Item lab_Item, principalOffice_Item, outside_Item, mainHallway_Item, englishClass_Item,
              mathClass_Item, historyClass_Item, gym_Item, pool1_Item, pool2_Item, pool3_Item,
-             pool4_Item, juulLounge_Item, secondHallway_Item, art_Item, scienceClass_Item;
+             pool4_Item, juulLounge_Item, secondHallway_Item, art_Item, scienceClass_Item,
+             transporter_Item;
              
              
              lab_Item = new Item("Used to surf the web.", 0, "Computer");
@@ -79,7 +80,8 @@ public class Game
              pool3_Item = new Item("This looks dirty...", 1, "Filter");
              pool4_Item = new Item("This looks dirty...", 1, "Filter");
              art_Item = new Item("The only color left here is green...", 10, "Paint Can");
-             juulLounge_Item = new Item("The only item in here is a toliet ,,,", 500, "Toliet");
+             juulLounge_Item = new Item("The only item in here is a toliet ...", 500, "Toliet");
+             transporter_Item = new Item("A big red button", 0, "Button");
     
   
       // create the rooms
@@ -99,6 +101,8 @@ public class Game
         secondHallway = new Room("You have reached the second hallway.", secondHallway_Item);
         art = new Room("In the art classroom.", art_Item);
         scienceClass = new Room("You are in the science classroom.", scienceClass_Item);
+        transporter = new TransporterRoom("A room that transcends all known science.", transporter_Item);
+        
         
         
         // initialise room exits
@@ -138,6 +142,13 @@ public class Game
         gym.setExit("south", scienceClass);
         
         principalOffice.setExit("west", pool2);
+        principalOffice.setExit("south", gym);
+        principalOffice.setExit("north", transporter);
+        
+        transporter.setExit("north", juulLounge);
+        transporter.setExit("east", outside);
+        transporter.setExit("south", lab);
+        transporter.setExit("west", secondHallway);
         
         prevRoom = null;
         player.setCurrentRoom(outside);  // start game outside
